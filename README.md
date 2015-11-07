@@ -15,10 +15,10 @@ Initialize a package by answering some questions, will create the appropriate `s
 Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
 ####`install <package> --save`
-Add this package to your project's `requirements.txt` file
+Add this package to your project's `requirements.txt` file if not already present (doesn't actually call `pip`)
 
-####`install <package> -g`
-Install globally by calling `pip`
+####`install <package> --global`
+Install globally (equivalent to a `pip` install)
 
 ####`search <package>`
 Search for a package on PyPi.
