@@ -17,7 +17,7 @@ Publish the package to PyPi. Will deal with any one-time configuration if necces
 ####`install <package> --save`
 Add this package to your project's `requirements.txt` file
 
-###`install <package> -g`
+####`install <package> -g`
 Install globally by calling `pip`
 
 ####`search <package>`
