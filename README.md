@@ -4,6 +4,8 @@ Managing packages with `npm` is incredibly easy, which encourages modularity. In
 
 `ppm` is a light-weight CLI offering `npm`-like commands, but wrapping `pip` under the hood.
 
+(DDAY - doesn't do anything yet)
+
 ## API
 
 ####`init`
