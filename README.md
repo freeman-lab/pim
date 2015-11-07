@@ -1,6 +1,6 @@
 # ppm
 
-Managing `node` packages with `npm` is incredibly easy, which encourages modularity. In contrast, writing new `python` packages and publishing them with `pip` is kind of a pain, involving lots of boilerplate and configuration.
+Managing `node` packages with `npm` is incredibly easy, which encourages modularity. In contrast, writing new `python` packages and publishing them with `pip` is kind of a pain, involving lots of boilerplate and configuration. Credit for this idea goes to Winthrop Gillis (@wingillis).
 
 `ppm` is a light-weight CLI offering `npm`-like commands, but wrapping `pip` under the hood.
 
