@@ -9,7 +9,7 @@ Managing `node` packages with `npm` is incredibly easy, which encourages modular
 ## API
 
 ####`init`
-Initialize a package by answering some questions, will create the appropriate `setup.py` file inside your package.
+Initialize a package by answering some questions, will create the appropriate `setup.py` file.
 
 ####`publish`
 Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
