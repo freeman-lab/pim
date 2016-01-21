@@ -72,7 +72,7 @@ Options
 
 ###`pim uninstall <package(s)> --globally[-g]`
 
-Remove this package from your project's `requirements.txt` file, if it's present.
+Remove package(s) from your project's `requirements.txt` file, if it's present.
 
 Options
 - `--globally[-g]` also uninstall from your environment using `pip`
