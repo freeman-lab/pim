@@ -1,6 +1,6 @@
 ## collaborators
 
-thanks to the following people:
+thanks to the following people
 
 <table><tbody><tr>
 <th align="left">freeman-lab</th><td><a href="https://github.com/freeman-lab">github/freeman-lab</a></td></tr>
