@@ -13,7 +13,7 @@ setup(
     author={{ author }},
     author_email={{ email }},
     url={{ repository }},
-    packages=[{{ name }}],
+    packages=[{{ package }}],
     install_requires=required,
     long_description='See ' + {{ repository }},
     license={{ license }}
