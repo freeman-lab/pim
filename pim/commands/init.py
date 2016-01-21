@@ -45,7 +45,8 @@ def init(force):
 
 
 def _defaults():
-    """Get info from the host system and construct some reasonable defaults
+    """
+    Get info from the host system and construct some reasonable defaults
 
     Returns
     -------
@@ -71,7 +72,8 @@ def _defaults():
     ])
 
 def _make_package(d, force=False):
-    """Make the actual package in the current directory
+    """
+    Make the actual package in the current directory
 
     Parameters
     ----------
