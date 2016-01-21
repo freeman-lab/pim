@@ -1,5 +1,9 @@
 import os
 import subprocess
+import threading
+import time
+import sys
+import unicodedata
 from click import echo, style
 from clint.textui import indent, puts
 
@@ -127,3 +131,33 @@ class requirements(object):
         if len(required) == 1 and required[0] == '':
             required = []
         return requirements(required)
+
+class spinner(threading.Thread):
+    """
+    Simple rotating spinner in the terminal.
+    """
+    def __init__(self):
+        if os.name == 'posix':
+            self.chars = (unicodedata.lookup('FIGURE DASH'),u'\\ ',u'| ',u'/ ')
+        else:
+            self.chars = (u'-',u'\\ ',u'| ',u'/ ')      
+        self.running = True 
+        self.out = sys.stdout
+        threading.Thread.__init__(self, None, None, 'spinner')
+        self.daemon = True
+
+    def spin(self):
+        for x in self.chars:
+            self.string = x + '\r'
+            self.out.write(self.string.encode('utf-8'))
+            self.out.flush()
+            time.sleep(0.05)
+
+    def run(self):
+        while self.running:
+            self.spin()
+
+    def stop(self):
+        self.running = False
+        time.sleep(0.2)
+        self.out.write(' ' + '\r')
