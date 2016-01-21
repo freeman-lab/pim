@@ -112,10 +112,13 @@ class requirements(object):
         self.save()
 
     def show(self):
-        echo('\nInstalled packages: ')
-        with indent(4, quote='  -'):
-            for package in self.required:
-                puts(package)
+        if len(self.required) == 0:
+            echo('\nNo packages installed')
+        else:
+            echo('\nInstalled packages: ')
+            with indent(4, quote='  -'):
+                for package in self.required:
+                    puts(package)
 
     @staticmethod
     def load():
