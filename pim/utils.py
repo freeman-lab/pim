@@ -1,3 +1,4 @@
+from __future__ import (unicode_literals, print_function, absolute_import, division)
 import os
 import subprocess
 import threading
@@ -125,9 +126,8 @@ class requirements(object):
             echo('\nNo requirements.')
         else:
             echo('\nCurrent requirements: ')
-            with indent(4, quote='  -'):
-                for package in self.required:
-                    puts(package)
+            for package in self.required:
+                echo(' - ' + str(package))
 
     @staticmethod
     def load():
@@ -149,10 +149,10 @@ class spinner(threading.Thread):
     """
     def __init__(self):
         if os.name == 'posix':
-            self.chars = (unicodedata.lookup('FIGURE DASH'),u'\\ ',u'| ',u'/ ')
+            self.chars = (unicodedata.lookup('FIGURE DASH'),'\\ ','| ','/ ')
         else:
-            self.chars = (u'-',u'\\ ',u'| ',u'/ ')      
-        self.running = True 
+            self.chars = ('-','\\ ','| ','/ ')
+        self.running = True
         self.out = sys.stdout
         threading.Thread.__init__(self, None, None, 'spinner')
         self.daemon = True
@@ -160,7 +160,7 @@ class spinner(threading.Thread):
     def spin(self):
         for x in self.chars:
             self.string = x + '\r'
-            self.out.write(self.string.encode('utf-8'))
+            self.out.write(self.string)
             self.out.flush()
             time.sleep(0.05)
 
