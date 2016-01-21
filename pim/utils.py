@@ -35,7 +35,7 @@ def fillin(source, fields, stringify=True):
     basedir = os.path.dirname(os.path.realpath(__file__))
     with open(os.path.join(basedir, 'templates', source), 'r') as t:
         template = t.read()
-        for k, v in fields.iteritems():
+        for k, v in fields.items():
             v = tostring(v) if stringify else v
             template = template.replace('{{ ' + k + ' }}', v)
     return template
