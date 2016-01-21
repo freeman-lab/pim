@@ -15,6 +15,7 @@ def write(name, fields=None, stringify=True, folder=None, force=False):
     exists = os.path.exists(location)
     if exists and not force:
         info('File %s already exists and will not be overwritten.' % location)
+        return
     with open(location, 'w+') as f:
         if fields:
             source = name + '.txt'
