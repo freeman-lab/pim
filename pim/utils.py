@@ -126,9 +126,8 @@ class requirements(object):
             echo('\nNo requirements.')
         else:
             echo('\nCurrent requirements: ')
-            with indent(4, quote='  -'):
-                for package in self.required:
-                    puts(package)
+            for package in self.required:
+                echo(' - ' + str(package))
 
     @staticmethod
     def load():
