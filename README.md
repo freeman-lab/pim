@@ -8,7 +8,7 @@ Why? In javascript, managing `node` packages with the command-line tool `npm` is
 
 ###`pim init <options>`
 
-Initializes a package by asking you some questions, and then creating
+Initializes a package by asking you some questions, and then creating the appropriate files, including `setup.py`, `setup.cfg`, `requirements.txt`, and a basic module layout.
 
 Options
 - `--force/--no-force` whether to overwrite existing files
