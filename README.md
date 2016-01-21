@@ -4,6 +4,8 @@
 
 Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain. You have to remember lots of boilerplate and configuration and tooling, and redo it for every new package. The hope is that streamlining this process will encourage more people to publish resuable code! 
 
+WIP
+
 ## example
 
 Initialize a project
