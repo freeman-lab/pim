@@ -8,22 +8,34 @@ Why? In javascript, managing `node` packages with the command-line tool `npm` is
 
 Initialize a project
 ```
-mkdir cool-project
-cd cool-project
+mkdir project
+cd project
 pim init
 ```
 
 You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
 
 ```
-name: [cool-project]
+name: [project]
 version: [1.0.0]
 author: [your-git-name]
 email: [your-git-email]
-repository: [https://github.com/your-git-name/cool-project]
+repository: [https://github.com/your-git-name/project]
 readme: [README.md]
 license: [MIT]
 entry point: [main.py]
+```
+
+Once it runs you'll have a folder layout that looks like:
+```
+project
+├── project
+│   ├── __init__.py
+│   └── main.py
+├── MANIFEST.in
+├── requirements.txt
+├── setup.cfg
+└── setup.py
 ```
 
 ## commands
