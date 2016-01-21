@@ -5,12 +5,14 @@ from pim.commands.uninstall import uninstall
 from click.testing import CliRunner
 
 def _create_test_package():
+    """Helper function to create a test package"""
     d = _defaults()
     d['description'] = 'test package'
     _make_package(d, True)
     return d
 
 def test_install_and_uninstall():
+    """Round trip the install/uninstall functionality"""
     pkg_to_install = 'nose'
     runner = CliRunner()
     with runner.isolated_filesystem():
