@@ -1,8 +1,8 @@
 # pim
 
-`pim` is a light-weight command-line interface for initializing and publishing Python packages. Under the hood, it wraps the standard python installation tool `pip` along with `wheel` and `twine`, and hopefully makes it all easier to use.
+`pim` is a light-weight command-line interface for initializing and publishing Python packages. Under the hood, it wraps the standard python installation tool `pip` along with `wheel` and `twine`, and hopefully makes it all easier to use, without inventing any new conventions.
 
-Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain. You have to remember lots of boilerplate and configuration and tooling, and redo it for every new package. The hope is that streamlining this process will encourage more people to publish resuable code!
+Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain. You have to remember lots of boilerplate and configuration and tooling, and redo it for every new package. The hope is that streamlining this process will encourage more people to publish resuable code! 
 
 ## example
 
