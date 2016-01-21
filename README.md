@@ -2,7 +2,7 @@
 
 `pim` is a light-weight command-line interface that makes it easy to initialize and publish Python packages. Under the hood, it wraps the standard python installation tool `pip`, but hopefully makes it easier to use.
 
-Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain, involving lots of boilerplate and configuration, and people often struggle to cobble together the neccessary info. The hope is that streamlining this process will encourage more people to publish resuable code!
+Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain, involving lots of boilerplate and configuration and multiple tools. The hope is that streamlining this process will encourage more people to publish resuable code!
 
 ## example
 
@@ -18,7 +18,7 @@ pim init
 
 You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
 
-```
+```bash
 name: [my-project]
 version: [1.0.0]
 author: [your-git-name]
