@@ -65,7 +65,7 @@ Options
 
 ###`pim install <package(s)> --globally[-g]`
 
-Add package(s) to your project's `requirements.txt` file, if not already present.
+Add package(s) to your project's `requirements.txt` file, if not already present. With no arguments and the `-g` flag, will install everything in requirements into your environment.
 
 Options
 - `--globally[-g]` also install into your environment using `pip`

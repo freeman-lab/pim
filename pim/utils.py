@@ -82,17 +82,22 @@ def show_requirements():
         for package in required:
             puts(package)
 
+def display(message, prefix):
+    for line in message.split('\n'):
+        if not line == '':
+            echo(prefix + line)
+
 def warn(message):
-    echo('[' + style('warning', fg='yellow') + '] ' + message)
+    display(message, '[' + style('warning', fg='yellow') + '] ')
 
 def success(message):
-    echo('[' + style('success', fg='green') + '] ' + message)
+    display(message, '[' + style('success', fg='green') + '] ')
 
 def info(message):
-    echo('[' + style('info', fg='blue') + '] ' + message)
+    display(message, '[' + style('info', fg='blue') + '] ')
 
 def error(message):
-    echo('[' + style('error', fg='red') + '] ' + message)
+    display(message, '[' + style('error', fg='red') + '] ')
 
 class requirements(object):
 
