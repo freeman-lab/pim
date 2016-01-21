@@ -25,6 +25,7 @@ def init(force):
     d['repository'] = prompt.query('repository:', default=gitrepo, validators=[])
     d['readme'] = prompt.query('readme:', default='README.md')
     d['license'] = prompt.query('license:', default='MIT')
+    # TODO add a package which is the name underscored
     d['entry'] = prompt.query('entry point:', default='main.py')
     d['description'] = prompt.query('description:', default='', validators=[])
     
@@ -41,6 +42,7 @@ def init(force):
     finalize = prompt.yn('\nSound like a plan?', default='y')
     
     if finalize:
+        # TODO use force
         write('requirements.txt')
         write('setup.py', fields=d)
         write('setup.cfg', fields=d, stringify=False)
