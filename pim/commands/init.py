@@ -25,7 +25,7 @@ def init(force):
     d['repository'] = prompt.query('repository:', default=gitrepo, validators=[])
     d['readme'] = prompt.query('readme:', default='README.md')
     d['license'] = prompt.query('license:', default='MIT')
-    d['entry'] = prompt.query('entry point:', default=d['name'] + '.py')
+    d['entry'] = prompt.query('entry point:', default='main.py')
     d['description'] = prompt.query('description:', default='', validators=[])
     
     puts('\nReady to create the following files:')
