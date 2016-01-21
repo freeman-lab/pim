@@ -6,7 +6,7 @@ from clint.textui import indent, puts, prompt
 from ..utils import write, retrieve, success
 
 @click.command('init', short_help='initialize a project', options_metavar='<options>')
-@click.option('--force/--no-force', default=False, help='Force overwrite existing files.')
+@click.option('--force', '-f', is_flag=True, help='Force overwrite existing files.')
 def init(force):
     """
     This command initializes a folder with the typical contents of a Python package.
