@@ -1,0 +1,5 @@
+[metadata]
+description-file = {{ readme }}
+
+[wheel]
+universal = 1
