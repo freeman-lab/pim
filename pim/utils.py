@@ -91,8 +91,8 @@ def success(message):
 def info(message):
     echo('[' + style('info', fg='blue') + '] ' + message)
 
-def failure(message):
-    echo('[' + style('failure', fg='red') + '] ' + message)
+def error(message):
+    echo('[' + style('error', fg='red') + '] ' + message)
 
 class requirements(object):
 
@@ -117,17 +117,23 @@ class requirements(object):
 
     def show(self):
         if len(self.required) == 0:
-            echo('\nNo packages installed')
+            echo('\nNo requirements.')
         else:
-            echo('\nInstalled packages: ')
+            echo('\nCurrent requirements: ')
             with indent(4, quote='  -'):
                 for package in self.required:
                     puts(package)
 
     @staticmethod
     def load():
-        with open('requirements.txt') as f:
-            required = f.read().split('\n')
+        try:
+            with open('requirements.txt') as f:
+                required = f.read().split('\n')
+        except IOError as e:
+            echo('')
+            error('Cannot find requirements.txt, are you in the wrong folder?')
+            sys.exit(1)
+
         if len(required) == 1 and required[0] == '':
             required = []
         return requirements(required)
