@@ -1,24 +1,27 @@
 # pim
 
-Managing `node` packages with `npm` is incredibly easy, which encourages modularity. In contrast, writing new `python` packages and publishing them with `pip` is kind of a pain, involving lots of boilerplate and configuration. 
+`pim` is a light-weight command-line interface that makes it easy to initialize and publish Python packages. Under the hood, it wraps the standard python installation tool `pip`, but hopefully makes it easier and more fun to use.
 
-`pim` is a light-weight CLI offering `npm`-like commands, but wrapping `pip` under the hood. Credit for this idea goes to Winthrop Gillis (@wingillis).
+Why? In `javascript`, Managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new `python` packages and publishing them is kind of a pain, involving lots of boilerplate and configuration, and people often struggle to cobble together the neccessary info.
 
-(doesn't do anything yet)
+## commands
 
-## API
+###`pim init <options>`
 
-####`init`
-Initialize a package by answering some questions, will create the appropriate `setup.py` file.
+Initializes a package by asking you some questions, and then creating
 
-####`publish`
+Options
+- `--force/--no-force` whether to overwrite existing files
+
+####`pim publish <options>`
 Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
-####`install <package> --save`
+####`pim install <package> --save`
 Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
 
-####`install <package> --global`
+####`pim install <package> --global`
 Install globally (equivalent to a `pip` install)
 
-####`search <package>`
-Search for a package on PyPi.
+## Thanks
+
+The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016.
