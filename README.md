@@ -36,13 +36,13 @@ Options
 - `--force/--no-force` whether to overwrite existing files
 
 ###`pim publish <options>`
-Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
+TODO Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
 ###`pim install <package> --save`
-Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
+TODO Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
 
 ###`pim install <package> --global`
-Install globally (equivalent to a `pip` install)
+TODO Install globally (equivalent to a `pip` install)
 
 ## Thanks
 
