@@ -7,7 +7,7 @@ Why? In javascript, managing `node` packages with the command-line tool `npm` is
 ## example
 
 Initialize a project
-```shell
+```
 mkdir cool-project
 cd cool-project
 pim init
@@ -15,7 +15,7 @@ pim init
 
 You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
 
-```shell
+```
 name: [cool-project]
 version: [1.0.0]
 author: [your-git-name]
