@@ -8,22 +8,22 @@ Why? In javascript, managing `node` packages with the command-line tool `npm` is
 
 Initialize a project
 ```shell
-mkdir my-project
-cd my-project
+mkdir cool-project
+cd cool-project
 pim init
 ```
 
 You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
 
 ```shell
-name: [my-project]
+name: [cool-project]
 version: [1.0.0]
 author: [your-git-name]
 email: [your-git-email]
-repository: [https://github.com/your-git-name/my-project]
+repository: [https://github.com/your-git-name/cool-project]
 readme: [README.md]
 license: [MIT]
-entry point: [pim.py]
+entry point: [main.py]
 ```
 
 ## commands
