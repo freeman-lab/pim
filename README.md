@@ -6,19 +6,16 @@ Why? In javascript, managing `node` packages with the command-line tool `npm` is
 
 ## example
 
-Make a new directory
-```
+Initialize a project
+```shell
 mkdir my-project
-```
-
-And create a project with
-```
+cd my-project
 pim init
 ```
 
 You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
 
-```bash
+```shell
 name: [my-project]
 version: [1.0.0]
 author: [your-git-name]
