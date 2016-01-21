@@ -58,4 +58,8 @@ TODO Install globally (equivalent to a `pip` install)
 
 ## credit
 
-The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016.
+The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016. See the [list of contributers](contributors.md) to the repo.
+
+## license
+
+[MIT](LICENSE)
