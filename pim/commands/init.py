@@ -45,6 +45,15 @@ def init(force):
 
 
 def _defaults():
+    """Get info from the host system and construct some reasonable defaults
+
+    Returns
+    -------
+    dict
+        A dictionary containing sensible defaults for the creation of a new
+        package.  Keys are 'name', 'version', 'author', 'email', 'repository',
+        'readme', 'license', 'package', 'entry', and 'description'
+    """
     name = os.getcwd().split('/')[-1]
     author = retrieve(['git', 'config', '--get', 'user.username'], default=getpass.getuser())
     email = retrieve(['git', 'config', '--get', 'user.email'], default=getpass.getuser() + '@gmail.com')
@@ -61,7 +70,17 @@ def _defaults():
         ('description', ''),
     ])
 
-def _make_package(d, force):
+def _make_package(d, force=False):
+    """Make the actual package in the current directory
+
+    Parameters
+    ----------
+    d : dict
+        Dictionary containing the info needed to initialize the package
+    force : bool, optional
+        Overwrite files that already exist.
+        Defaults to False.
+    """
     write('requirements.txt', force=force)
     write('setup.py', fields=d, force=force)
     write('setup.cfg', fields=d, stringify=False, force=force)
