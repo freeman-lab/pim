@@ -4,22 +4,47 @@
 
 Why? In javascript, managing `node` packages with the command-line tool `npm` is incredibly easy, which encourages modularity. In contrast, writing new Python packages and publishing them is kind of a pain, involving lots of boilerplate and configuration, and people often struggle to cobble together the neccessary info. The hope is that streamlining this process will encourage more people to publish resuable code!
 
+## example
+
+Make a new directory
+```
+mkdir my-project
+```
+
+And create a project with
+```
+pim init
+```
+
+You'll be prompted with a set of questions, most of which will be pre-filled with sensible defaults, e.g.
+
+```
+name: [my-project]
+version: [1.0.0]
+author: [your-git-name]
+email: [your-git-email]
+repository: [https://github.com/your-git-name/my-project]
+readme: [README.md]
+license: [MIT]
+entry point: [pim.py]
+```
+
 ## commands
 
-###`pim init <options>`
+####`pim init <options>`
 
 Initializes a package by asking you some questions, and then creating the appropriate files, including `setup.py`, `setup.cfg`, `requirements.txt`, and a basic module layout.
 
 Options
 - `--force/--no-force` whether to overwrite existing files
 
-####`pim publish <options>`
+#####`pim publish <options>`
 Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
-####`pim install <package> --save`
+#####`pim install <package> --save`
 Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
 
-####`pim install <package> --global`
+#####`pim install <package> --global`
 Install globally (equivalent to a `pip` install)
 
 ## Thanks
