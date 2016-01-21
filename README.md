@@ -28,20 +28,20 @@ entry point: [main.py]
 
 ## commands
 
-####`pim init <options>`
+###`pim init <options>`
 
 Initializes a package by asking you some questions, and then creating the appropriate files, including `setup.py`, `setup.cfg`, `requirements.txt`, and a basic module layout.
 
 Options
 - `--force/--no-force` whether to overwrite existing files
 
-#####`pim publish <options>`
+###`pim publish <options>`
 Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
-#####`pim install <package> --save`
+###`pim install <package> --save`
 Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
 
-#####`pim install <package> --global`
+###`pim install <package> --global`
 Install globally (equivalent to a `pip` install)
 
 ## Thanks
