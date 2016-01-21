@@ -56,6 +56,6 @@ TODO Add this package to your project's `requirements.txt` file if not already p
 ###`pim install <package> --global`
 TODO Install globally (equivalent to a `pip` install)
 
-## Thanks
+## credit
 
 The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016.
