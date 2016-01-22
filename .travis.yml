@@ -1,13 +1,23 @@
 language: python
 
 python:
-  - "2.7"
-  - "3.4"
+  - 2.7
+  - 3.4
+  - 3.5
 
 sudo: false
 
 install:
   - pip install .
+  - pip install pytest-cov
 
 script:
-  - py.test
+  # Run the tests on the `setup.py install`ed version
+  - py.test -v
+
+after_success:
+  # uninstall the `setup.py install`ed version and install with develop to
+  # get coverage stats
+  - pip uninstall pim -y
+  - python setup.py develop
+  - py.test --cov=pim -v

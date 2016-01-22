@@ -38,23 +38,47 @@ project
 └── setup.py
 ```
 
+You can now add dependencies to your `requirements.txt` file (which will also be picked up by `setup.py`).
+
+```
+pim install boto requests
+```
+
+The `-g` flag will install the same package(s) into your environment using `pip`, which is convienient when you want the same package present in the same environment you are developing in.
+
+You can similarly remove dependencies.
+
+```
+pim uninstall boto
+```
+
+Which will remove the package(s) from `requirements.txt`, and also uninstall from your environment with `-g`. With `install` and `uninstall`, you should never need to manually edit your `requirements.txt` file!
+
 ## commands
 
-###`pim init <options>`
+###`pim init --force[-f]`
 
 Initializes a package by asking you some questions, and then creating the appropriate files, including `setup.py`, `setup.cfg`, `requirements.txt`, and a basic module layout.
 
 Options
-- `--force/--no-force` whether to overwrite existing files
+- `--force[-f]` whether to overwrite existing files
+
+###`pim install <package(s)> --globally[-g]`
+
+Add package(s) to your project's `requirements.txt` file, if not already present. With no arguments and the `-g` flag, will install everything in requirements into your environment.
+
+Options
+- `--globally[-g]` also install into your environment using `pip`
+
+###`pim uninstall <package(s)> --globally[-g]`
+
+Remove package(s) from your project's `requirements.txt` file, if it's present.
+
+Options
+- `--globally[-g]` also uninstall from your environment using `pip`
 
 ###`pim publish <options>`
 TODO Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
-
-###`pim install <package> --save`
-TODO Add this package to your project's `requirements.txt` file if not already present (doesn't call `pip`)
-
-###`pim install <package> --global`
-TODO Install globally (equivalent to a `pip` install)
 
 ## credit
 

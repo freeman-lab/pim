@@ -1,5 +1,10 @@
+from __future__ import (unicode_literals, print_function, absolute_import, division)
 import os
 import subprocess
+import threading
+import time
+import sys
+import unicodedata
 from click import echo, style
 from clint.textui import indent, puts
 
@@ -78,17 +83,22 @@ def show_requirements():
         for package in required:
             puts(package)
 
+def display(message, prefix):
+    for line in message.split('\n'):
+        if not line == '':
+            echo(prefix + line)
+
 def warn(message):
-    echo('[' + style('warning', fg='yellow') + '] ' + message)
+    display(message, '[' + style('warning', fg='yellow') + '] ')
 
 def success(message):
-    echo('[' + style('success', fg='green') + '] ' + message)
+    display(message, '[' + style('success', fg='green') + '] ')
 
 def info(message):
-    echo('[' + style('info', fg='blue') + '] ' + message)
+    display(message, '[' + style('info', fg='blue') + '] ')
 
-def failure(message):
-    echo('[' + style('failure', fg='red') + '] ' + message)
+def error(message):
+    display(message, '[' + style('error', fg='red') + '] ')
 
 class requirements(object):
 
@@ -113,17 +123,52 @@ class requirements(object):
 
     def show(self):
         if len(self.required) == 0:
-            echo('\nNo packages installed')
+            echo('\nNo requirements.')
         else:
-            echo('\nInstalled packages: ')
-            with indent(4, quote='  -'):
-                for package in self.required:
-                    puts(package)
+            echo('\nCurrent requirements: ')
+            for package in self.required:
+                echo(' - ' + str(package))
 
     @staticmethod
     def load():
-        with open('requirements.txt') as f:
-            required = f.read().split('\n')
+        try:
+            with open('requirements.txt') as f:
+                required = f.read().split('\n')
+        except IOError as e:
+            echo('')
+            error('Cannot find requirements.txt, are you in the wrong folder?')
+            sys.exit(1)
+
         if len(required) == 1 and required[0] == '':
             required = []
         return requirements(required)
+
+class spinner(threading.Thread):
+    """
+    Simple rotating spinner in the terminal.
+    """
+    def __init__(self):
+        if os.name == 'posix':
+            self.chars = (unicodedata.lookup('FIGURE DASH'),'\\ ','| ','/ ')
+        else:
+            self.chars = ('-','\\ ','| ','/ ')
+        self.running = True
+        self.out = sys.stdout
+        threading.Thread.__init__(self, None, None, 'spinner')
+        self.daemon = True
+
+    def spin(self):
+        for x in self.chars:
+            self.string = x + '\r'
+            self.out.write(self.string)
+            self.out.flush()
+            time.sleep(0.05)
+
+    def run(self):
+        while self.running:
+            self.spin()
+
+    def stop(self):
+        self.running = False
+        time.sleep(0.2)
+        self.out.write(' ' + '\r')
