@@ -68,7 +68,7 @@ def _defaults():
         ('license', 'MIT'),
         ('package', name.replace('-','_')),
         ('entry', 'main.py'),
-        ('description', ''),
+        ('description', ' '),
     ])
 
 def _make_package(d, force=False):

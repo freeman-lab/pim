@@ -9,7 +9,7 @@ required = open('requirements.txt').read().split('\n')
 setup(
     name={{ name }},
     version=version,
-    description= {{ description }},
+    description={{ description }},
     author={{ author }},
     author_email={{ email }},
     url={{ repository }},
