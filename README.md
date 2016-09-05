@@ -82,7 +82,7 @@ TODO Publish the package to PyPi. Will deal with any one-time configuration if n
 
 ## credit
 
-The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016. See the [list of contributers](contributors.md) to the repo.
+The idea for this initially came from Winthrop Gillis (@wingillis), and evolved through a discussion with @danielballan and @ericdill and others at PyData 2016. See the [list of collaborators](collaborators.md).
 
 ## license
 
