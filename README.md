@@ -56,21 +56,21 @@ Which will remove the package(s) from `requirements.txt`, and also uninstall fro
 
 ## commands
 
-###`pim init --force[-f]`
+### `pim init --force[-f]`
 
 Initializes a package by asking you some questions, and then creating the appropriate files, including `setup.py`, `setup.cfg`, `requirements.txt`, and a basic module layout.
 
 Options
 - `--force[-f]` whether to overwrite existing files
 
-###`pim install <package(s)> --globally[-g]`
+### `pim install <package(s)> --globally[-g]`
 
 Add package(s) to your project's `requirements.txt` file, if not already present. With no arguments and the `-g` flag, will install everything in requirements into your environment.
 
 Options
 - `--globally[-g]` also install into your environment using `pip`
 
-###`pim uninstall <package(s)> --globally[-g]`
+### `pim uninstall <package(s)> --globally[-g]`
 
 Remove package(s) from your project's `requirements.txt` file, if it's present.
 
