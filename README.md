@@ -77,7 +77,7 @@ Remove package(s) from your project's `requirements.txt` file, if it's present.
 Options
 - `--globally[-g]` also uninstall from your environment using `pip`
 
-###`pim publish <options>`
+### `pim publish <options>`
 TODO Publish the package to PyPi. Will deal with any one-time configuration if neccessary.
 
 ## credit
