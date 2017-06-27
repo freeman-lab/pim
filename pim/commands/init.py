@@ -56,7 +56,7 @@ def _defaults():
         'readme', 'license', 'package', 'entry', and 'description'
     """
     name = os.getcwd().split('/')[-1]
-    author = retrieve(['git', 'config', '--get', 'user.username'], default=getpass.getuser())
+    author = retrieve(['git', 'config', '--get', 'user.name'], default=getpass.getuser())
     email = retrieve(['git', 'config', '--get', 'user.email'], default=getpass.getuser() + '@gmail.com')
     return OrderedDict([
         ('name', name),

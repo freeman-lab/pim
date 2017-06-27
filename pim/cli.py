@@ -12,7 +12,7 @@ def cli():
     to initialize a project from inside a new folder.
 
     If you already have a project you want to publish, you'll want to call `pim publish`
-    from inside the folder with your project.
+    from inside the folder with your project (not yet implemented).
     """
     pass
 
